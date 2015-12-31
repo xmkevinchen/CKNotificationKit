@@ -47,9 +47,33 @@
 			isa = PBXGroup;
 			children = (
 				0A4A84751C35F129003B372D /* CKNotificationKit.h */,
+				0A4A847E1C35F7E4003B372D /* Sources */,
 				0A4A84771C35F129003B372D /* Info.plist */,
 			);
 			path = CKNotificationKit;
+			sourceTree = "<group>";
+		};
+		0A4A847E1C35F7E4003B372D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0A4A847F1C35F7E4003B372D /* Local */,
+				0A4A84811C35F7E4003B372D /* Remote */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		0A4A847F1C35F7E4003B372D /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		0A4A84811C35F7E4003B372D /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Remote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
