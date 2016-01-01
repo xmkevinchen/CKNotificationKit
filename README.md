@@ -1,5 +1,16 @@
 # CKNotificationKit
 
+## Usage
+
+```ruby
+
+platform :ios, '8.0'
+
+use_frameworks!
+pod 'CKNotificationKit'
+
+```
+
 ## Description
 
 CKNotificationKit is just a simple idea about how to organize the processing code of Push Notification.   

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CKNotificationKit/CKNotificationKit.h>
+#import <CKNotificationKit/CKNotificationKit-Swift.h>
 
 @interface CKWarningNotificationProcessor : NSObject <CKPushNotificationProcessor>
 
