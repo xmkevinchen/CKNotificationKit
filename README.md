@@ -7,9 +7,9 @@ CKNotificationKit is just a simple idea about how to organize the processing cod
 The basic mechanism is **Registration and Processing**.
 
 Briefly, based on the requirement,  
-1. Several notification processors could be created, which are adopt `CKPushNotificationProcessor`.  
-2. Register processors to `CKPushNotificationRouter`, usually when App is launched, or will be launched.  
-3. Use `CKPushNotificationRouter` at `UIApplicationDelegate` relative methods.  
+1. Several notification processors could be created, which are adopt `CKPushNotificationProcessor`.    
+2. Register processors to `CKPushNotificationRouter`, usually when App is launched, or will be launched.    
+3. Use `CKPushNotificationRouter` at `UIApplicationDelegate` relative methods.    
 
 ## Create Processor
 
@@ -87,9 +87,9 @@ class CKGreetingNotificationProcessor: NSObject, CKPushNotificationProcessor {
 ```
 
 As sample processor shown above,  
-1. The `static func processorType() -> String` indicates which type of push notification could be processed with this processor.
-2. When App receives push notification, `CKPushNotificationRouter` would look up its registered processors, pick up correct one and generate one new fresh instance of processor.
-3. After getting an instance of correct processor, `CKPushNotificationRouter` would call processor's `func process(application: UIApplication, notification: [NSObject : AnyObject], fetchCompletionHandler: (UIBackgroundFetchResult -> Void)?)` method, so this is the right place to put the processing logic of push notification.
+1. The `static func processorType() -> String` indicates which type of push notification could be processed with this processor.  
+2. When App receives push notification, `CKPushNotificationRouter` would look up its registered processors, pick up correct one and generate one new fresh instance of processor.  
+3. After getting an instance of correct processor, `CKPushNotificationRouter` would call processor's `func process(application: UIApplication, notification: [NSObject : AnyObject], fetchCompletionHandler: (UIBackgroundFetchResult -> Void)?)` method, so this is the right place to put the processing logic of push notification.  
 
 
 ## Register Processor
@@ -136,9 +136,9 @@ func application(application: UIApplication, didReceiveRemoteNotification userIn
 
 ```
 
-For picking up correct processor, `CKPushNotificationRouter` has two simple ways to find correct push notification type
-1. property `messageTypeKey`, default value is `messageType`
-2. property `messageTypeProcessor` which is a closure, default value is nil
+For picking up correct processor, `CKPushNotificationRouter` has two simple ways to find correct push notification type  
+1. property `messageTypeKey`, default value is `messageType`  
+2. property `messageTypeProcessor` which is a closure, default value is nil  
 
 When `messageTypeProcessor` isn't set, `CKPushNotificationRouter` uses `messageTypeKey` value to find the type directly in the dictionary of push notification. When `messageTypeProcessor` is set, `CKPushNotificationRouter` leaves the logic for you.
 
