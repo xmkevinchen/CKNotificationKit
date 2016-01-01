@@ -10,8 +10,21 @@
 		0A4A84761C35F129003B372D /* CKNotificationKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A4A84751C35F129003B372D /* CKNotificationKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A4A84861C35F8FB003B372D /* CKPushNotificationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A84851C35F8FB003B372D /* CKPushNotificationProcessor.swift */; };
 		0A4A84881C35FA5E003B372D /* CKPushNotificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A84871C35FA5E003B372D /* CKPushNotificationRouter.swift */; };
+		0A5147D11C3610A9000F9FE8 /* CKNotificationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4A84721C35F129003B372D /* CKNotificationKit.framework */; };
+		0A5147DC1C361207000F9FE8 /* CKPushNotificationRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5147DB1C361207000F9FE8 /* CKPushNotificationRouterSpec.swift */; };
+		914A53ABE69A9919768F4E3B /* Pods_CKNotificationKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFD6CE291E6FBA82385005E /* Pods_CKNotificationKitTests.framework */; };
 		B0D23F511728D82A522F1768 /* Pods_CKNotificationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F049A7F917BB937C1D389DB1 /* Pods_CKNotificationKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0A5147D21C3610A9000F9FE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A4A84691C35F129003B372D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A4A84711C35F129003B372D;
+			remoteInfo = CKNotificationKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0A4A84721C35F129003B372D /* CKNotificationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CKNotificationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,7 +32,13 @@
 		0A4A84771C35F129003B372D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A4A84851C35F8FB003B372D /* CKPushNotificationProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKPushNotificationProcessor.swift; sourceTree = "<group>"; };
 		0A4A84871C35FA5E003B372D /* CKPushNotificationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKPushNotificationRouter.swift; sourceTree = "<group>"; };
+		0A5147CC1C3610A9000F9FE8 /* CKNotificationKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CKNotificationKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A5147D01C3610A9000F9FE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A5147DB1C361207000F9FE8 /* CKPushNotificationRouterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKPushNotificationRouterSpec.swift; sourceTree = "<group>"; };
+		5DFD6CE291E6FBA82385005E /* Pods_CKNotificationKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CKNotificationKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CAB8379E3EF0A321C08A82 /* Pods-CKNotificationKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKNotificationKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKNotificationKit/Pods-CKNotificationKit.debug.xcconfig"; sourceTree = "<group>"; };
+		8BD46A588EFD4A222921687E /* Pods-CKNotificationKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKNotificationKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKNotificationKitTests/Pods-CKNotificationKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8D8CA91BB1AECBC94C62D746 /* Pods-CKNotificationKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKNotificationKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKNotificationKitTests/Pods-CKNotificationKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		E8CE2788B3C032A2C77C98C8 /* Pods-CKNotificationKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKNotificationKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKNotificationKit/Pods-CKNotificationKit.release.xcconfig"; sourceTree = "<group>"; };
 		F049A7F917BB937C1D389DB1 /* Pods_CKNotificationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CKNotificationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -33,6 +52,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0A5147C91C3610A9000F9FE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A5147D11C3610A9000F9FE8 /* CKNotificationKit.framework in Frameworks */,
+				914A53ABE69A9919768F4E3B /* Pods_CKNotificationKitTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -40,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				0A4A84741C35F129003B372D /* CKNotificationKit */,
+				0A5147CD1C3610A9000F9FE8 /* CKNotificationKitTests */,
 				0A4A84731C35F129003B372D /* Products */,
 				4CF2D2A6DC2FA5D89685CAFE /* Pods */,
 				19E06D2562ED59A3F88F5D3C /* Frameworks */,
@@ -50,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				0A4A84721C35F129003B372D /* CKNotificationKit.framework */,
+				0A5147CC1C3610A9000F9FE8 /* CKNotificationKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,10 +119,36 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
+		0A5147CD1C3610A9000F9FE8 /* CKNotificationKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				0A5147D91C361207000F9FE8 /* Tests */,
+				0A5147D01C3610A9000F9FE8 /* Info.plist */,
+			);
+			path = CKNotificationKitTests;
+			sourceTree = "<group>";
+		};
+		0A5147D91C361207000F9FE8 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0A5147DA1C361207000F9FE8 /* Remote */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		0A5147DA1C361207000F9FE8 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				0A5147DB1C361207000F9FE8 /* CKPushNotificationRouterSpec.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
 		19E06D2562ED59A3F88F5D3C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				F049A7F917BB937C1D389DB1 /* Pods_CKNotificationKit.framework */,
+				5DFD6CE291E6FBA82385005E /* Pods_CKNotificationKitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,6 +158,8 @@
 			children = (
 				65CAB8379E3EF0A321C08A82 /* Pods-CKNotificationKit.debug.xcconfig */,
 				E8CE2788B3C032A2C77C98C8 /* Pods-CKNotificationKit.release.xcconfig */,
+				8BD46A588EFD4A222921687E /* Pods-CKNotificationKitTests.debug.xcconfig */,
+				8D8CA91BB1AECBC94C62D746 /* Pods-CKNotificationKitTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -140,16 +198,42 @@
 			productReference = 0A4A84721C35F129003B372D /* CKNotificationKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		0A5147CB1C3610A9000F9FE8 /* CKNotificationKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A5147D61C3610A9000F9FE8 /* Build configuration list for PBXNativeTarget "CKNotificationKitTests" */;
+			buildPhases = (
+				A5EF969292E934CF5EB31CB9 /* Check Pods Manifest.lock */,
+				0A5147C81C3610A9000F9FE8 /* Sources */,
+				0A5147C91C3610A9000F9FE8 /* Frameworks */,
+				0A5147CA1C3610A9000F9FE8 /* Resources */,
+				1BF9968AAEADDDDDEFA84295 /* Embed Pods Frameworks */,
+				B8019E9CA58BEF18FEAF52BE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A5147D31C3610A9000F9FE8 /* PBXTargetDependency */,
+			);
+			name = CKNotificationKitTests;
+			productName = CKNotificationKitTests;
+			productReference = 0A5147CC1C3610A9000F9FE8 /* CKNotificationKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		0A4A84691C35F129003B372D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Kevin Chen";
 				TargetAttributes = {
 					0A4A84711C35F129003B372D = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = H573L27DJM;
+					};
+					0A5147CB1C3610A9000F9FE8 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = H573L27DJM;
 					};
@@ -168,6 +252,7 @@
 			projectRoot = "";
 			targets = (
 				0A4A84711C35F129003B372D /* CKNotificationKit */,
+				0A5147CB1C3610A9000F9FE8 /* CKNotificationKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -180,9 +265,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0A5147CA1C3610A9000F9FE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1BF9968AAEADDDDDEFA84295 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CKNotificationKitTests/Pods-CKNotificationKitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5FF6EC4D8D1E7251D6CAD91C /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,6 +303,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A5EF969292E934CF5EB31CB9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B8019E9CA58BEF18FEAF52BE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CKNotificationKitTests/Pods-CKNotificationKitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC044B510876C17FA67247E1 /* Copy Pods Resources */ = {
@@ -225,7 +362,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0A5147C81C3610A9000F9FE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A5147DC1C361207000F9FE8 /* CKPushNotificationRouterSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A5147D31C3610A9000F9FE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A4A84711C35F129003B372D /* CKNotificationKit */;
+			targetProxy = 0A5147D21C3610A9000F9FE8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0A4A84781C35F129003B372D /* Debug */ = {
@@ -354,6 +507,28 @@
 			};
 			name = Release;
 		};
+		0A5147D41C3610A9000F9FE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BD46A588EFD4A222921687E /* Pods-CKNotificationKitTests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = CKNotificationKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xmkevinchen.CKNotificationKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0A5147D51C3610A9000F9FE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D8CA91BB1AECBC94C62D746 /* Pods-CKNotificationKitTests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = CKNotificationKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xmkevinchen.CKNotificationKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -371,6 +546,15 @@
 			buildConfigurations = (
 				0A4A847B1C35F129003B372D /* Debug */,
 				0A4A847C1C35F129003B372D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A5147D61C3610A9000F9FE8 /* Build configuration list for PBXNativeTarget "CKNotificationKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A5147D41C3610A9000F9FE8 /* Debug */,
+				0A5147D51C3610A9000F9FE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

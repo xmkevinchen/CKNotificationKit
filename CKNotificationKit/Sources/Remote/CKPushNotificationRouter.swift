@@ -20,7 +20,7 @@ public class CKPushNotificationRouter {
     public var messageTypeProcessor: ([NSObject: AnyObject] -> String)?
     public var messageTypeKey: String = "messageType"
     
-    private var processors: [String: CKPushNotificationProcessor.Type]
+    var processors: [String: CKPushNotificationProcessor.Type]
     
     private init() {
         self.processors = [String: CKPushNotificationProcessor.Type]()
@@ -47,7 +47,7 @@ public class CKPushNotificationRouter {
      */
     public func route(application: UIApplication,
         notification:[NSObject: AnyObject],
-        fetchCompletionHandler:(UIBackgroundFetchResult -> Void)) -> Bool
+        fetchCompletionHandler:(UIBackgroundFetchResult -> Void)?) -> Bool
     {
         
         DDLogVerbose("====> Application.state = \(application.applicationState)")
@@ -69,6 +69,10 @@ public class CKPushNotificationRouter {
         processors[processor.processorType()] = processor
     }
     
+    public func unregister(processor processor: CKPushNotificationProcessor.Type) {
+        processors.removeValueForKey(processor.processorType())
+    }
+    
     private func processorWithNotification(notification: [NSObject: AnyObject]) -> CKPushNotificationProcessor? {
         
         let messageType: String
@@ -78,20 +82,16 @@ public class CKPushNotificationRouter {
         } else {
             if let type = notification[messageTypeKey] as? String {
                 messageType = type
-            } else {
-                
+            } else {                
                 DDLogVerbose("====> No registered processor for notification = \(notification)")
                 return nil;
             }
         }
         
         if let processor = processors[messageType] {
-            
             DDLogVerbose("====> Found registered processor for notification = \(notification)")
-            
             return processor.init(notification: notification)
         } else {
-            
             DDLogVerbose("====> No registered processor for notification = \(notification)")
             return nil
         }

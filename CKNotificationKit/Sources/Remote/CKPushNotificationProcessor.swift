@@ -14,7 +14,7 @@ public protocol CKPushNotificationProcessor : class {
     
     init(notification:[NSObject: AnyObject])
     
-    func process(application: UIApplication, notification:[NSObject: AnyObject], fetchCompletionHandler:(UIBackgroundFetchResult -> Void))
+    func process(application: UIApplication, notification:[NSObject: AnyObject], fetchCompletionHandler:(UIBackgroundFetchResult -> Void)?)
 }
 
 
