@@ -9,9 +9,9 @@
 import UIKit
 import CocoaLumberjack
 
-public class CKPushNotificationRouter {
+@objc public class CKPushNotificationRouter: NSObject {
     
-    static let sharedRouter: CKPushNotificationRouter = {
+    public static let sharedRouter: CKPushNotificationRouter = {
         let instance = CKPushNotificationRouter()
         
         return instance
@@ -22,7 +22,7 @@ public class CKPushNotificationRouter {
     
     var processors: [String: CKPushNotificationProcessor.Type]
     
-    private init() {
+    private override init() {
         self.processors = [String: CKPushNotificationProcessor.Type]()
     }
     

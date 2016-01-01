@@ -112,7 +112,7 @@ class CKPushNotificationRouterSpec: QuickSpec {
         }
     }
     
-    class CKGreetingProcessor: CKPushNotificationProcessor {
+    class CKGreetingProcessor: NSObject, CKPushNotificationProcessor {
         
         var notification: [NSObject: AnyObject]
         
@@ -128,7 +128,7 @@ class CKPushNotificationRouterSpec: QuickSpec {
         
     }
     
-    class CKWarningProcessor: CKPushNotificationProcessor {
+    class CKWarningProcessor: NSObject, CKPushNotificationProcessor {
         
         var notification: [NSObject: AnyObject]
         
@@ -143,7 +143,7 @@ class CKPushNotificationRouterSpec: QuickSpec {
         func process(application: UIApplication, notification: [NSObject : AnyObject], fetchCompletionHandler: (UIBackgroundFetchResult -> Void)?) {}
     }
     
-    class CKInfoProcessor: CKPushNotificationProcessor {
+    class CKInfoProcessor: NSObject, CKPushNotificationProcessor {
         
         var notification: [NSObject: AnyObject]
         

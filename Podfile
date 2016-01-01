@@ -16,3 +16,8 @@ end
 target 'CKNotificationKitTests', :exclusive => true do
   testing_pods
 end
+
+target 'Sample' do
+  pod 'CocoaLumberjack/Swift'
+  pod 'SVProgressHUD'
+end
