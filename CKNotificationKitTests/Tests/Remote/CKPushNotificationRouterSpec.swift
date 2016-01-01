@@ -116,7 +116,7 @@ class CKPushNotificationRouterSpec: QuickSpec {
         
         var notification: [NSObject: AnyObject]
         
-        static func processorType() -> String {
+        static var processorType: String {
             return "greeting"
         }
         
@@ -132,7 +132,7 @@ class CKPushNotificationRouterSpec: QuickSpec {
         
         var notification: [NSObject: AnyObject]
         
-        static func processorType() -> String {
+        static var processorType: String {
             return "warning"
         }
         
@@ -147,7 +147,7 @@ class CKPushNotificationRouterSpec: QuickSpec {
         
         var notification: [NSObject: AnyObject]
         
-        static func processorType() -> String {
+        static var processorType: String {
             return "info"
         }
         

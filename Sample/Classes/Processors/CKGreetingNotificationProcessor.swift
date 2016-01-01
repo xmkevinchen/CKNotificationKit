@@ -14,7 +14,7 @@ class CKGreetingNotificationProcessor: NSObject, CKPushNotificationProcessor {
     
     var notification: [NSObject : AnyObject]
     
-    static func processorType() -> String {
+    static var processorType: String {
         return "greeting"
     }
     

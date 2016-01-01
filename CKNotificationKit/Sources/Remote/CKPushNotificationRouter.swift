@@ -66,11 +66,11 @@ import CocoaLumberjack
 
     
     public func register(processor processor: CKPushNotificationProcessor.Type) {
-        processors[processor.processorType()] = processor
+        processors[processor.processorType] = processor
     }
     
     public func unregister(processor processor: CKPushNotificationProcessor.Type) {
-        processors.removeValueForKey(processor.processorType())
+        processors.removeValueForKey(processor.processorType)
     }
     
     private func processorWithNotification(notification: [NSObject: AnyObject]) -> CKPushNotificationProcessor? {

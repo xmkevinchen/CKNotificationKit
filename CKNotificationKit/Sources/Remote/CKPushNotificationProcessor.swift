@@ -10,7 +10,7 @@ import UIKit
 
 @objc public protocol CKPushNotificationProcessor : class {
     
-    static func processorType() -> String
+    static var processorType: String { get }
     
     init(notification:[NSObject: AnyObject])
     
