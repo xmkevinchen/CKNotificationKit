@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CocoaLumberjack
 
 public class CKPushNotificationRouter {
     
@@ -49,6 +50,9 @@ public class CKPushNotificationRouter {
         fetchCompletionHandler:(UIBackgroundFetchResult -> Void)) -> Bool
     {
         
+        DDLogVerbose("====> Application.state = \(application.applicationState)")
+        DDLogVerbose("====> Received notification = \(notification)")
+        
         var isProcessed = false
         
         if let processor = processorWithNotification(notification) {
@@ -75,13 +79,20 @@ public class CKPushNotificationRouter {
             if let type = notification[messageTypeKey] as? String {
                 messageType = type
             } else {
+                
+                DDLogVerbose("====> No registered processor for notification = \(notification)")
                 return nil;
             }
         }
         
         if let processor = processors[messageType] {
+            
+            DDLogVerbose("====> Found registered processor for notification = \(notification)")
+            
             return processor.init(notification: notification)
         } else {
+            
+            DDLogVerbose("====> No registered processor for notification = \(notification)")
             return nil
         }
     }
