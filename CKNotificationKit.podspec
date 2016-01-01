@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   # s.description  = <<-DESC
   #                  DESC
 
-  # s.homepage     = "http://EXAMPLE/CKNotificationKit"
+  s.homepage     = "https://github.com/xmkevinchen/CKNotificationKit"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -91,8 +91,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Sources", "Sources/**/*.{h,m,swift}"
-  s.exclude_files = "Sources/Exclude"
+  s.source_files  = "CKNotificationKit/Sources", "CKNotificationKit/Sources/**/*.{h,m,swift}", "CKNotificationKit/CKNotificationKit.h"
+  s.exclude_files = "CKNotificationKit/Sources/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 
