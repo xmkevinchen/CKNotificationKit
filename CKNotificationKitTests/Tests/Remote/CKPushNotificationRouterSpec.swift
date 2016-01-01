@@ -56,8 +56,8 @@ class CKPushNotificationRouterSpec: QuickSpec {
             context("when using default message type processor") {
                 
                 beforeEach {
-                    CKPushNotificationRouter.sharedRouter.messageTypeProcessor = { _ in
-                        return "warning"
+                    CKPushNotificationRouter.sharedRouter.messageTypeProcessor = { notification in
+                        return notification["messageType"] as! String
                     }
                 }
                 
