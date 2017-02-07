@@ -18,7 +18,7 @@ class CKPushNotificationRouterSpec: QuickSpec {
         
         describe("CKPushNotificationRouter") {
             
-            let application = UIApplication.sharedApplication()
+            let application = UIApplication.shared
             
             beforeEach {
                 CKPushNotificationRouter.sharedRouter.register(processor: CKGreetingProcessor.self)
@@ -43,10 +43,10 @@ class CKPushNotificationRouterSpec: QuickSpec {
                     ]
                     
                     it("router should route correctly") {
-                        expect(CKPushNotificationRouter.sharedRouter.route(application, notification: notification, fetchCompletionHandler: nil)).to(beTruthy())
+                        expect(CKPushNotificationRouter.sharedRouter.route(application: application, notification: notification, fetchCompletionHandler: nil)).to(beTruthy())
                         
                         CKPushNotificationRouter.sharedRouter.unregister(processor: CKGreetingProcessor.self)
-                        expect(CKPushNotificationRouter.sharedRouter.route(application, notification: notification, fetchCompletionHandler: nil)).to(beFalsy())
+                        expect(CKPushNotificationRouter.sharedRouter.route(application: application, notification: notification, fetchCompletionHandler: nil)).to(beFalsy())
                         
                     }
                 }
@@ -69,10 +69,10 @@ class CKPushNotificationRouterSpec: QuickSpec {
                     ]
                     
                     it("router should route correctly") {
-                        expect(CKPushNotificationRouter.sharedRouter.route(application, notification: notification, fetchCompletionHandler: nil)).to(beTruthy())
+                        expect(CKPushNotificationRouter.sharedRouter.route(application: application, notification: notification, fetchCompletionHandler: nil)).to(beTruthy())
                         
                         CKPushNotificationRouter.sharedRouter.unregister(processor: CKWarningProcessor.self)
-                        expect(CKPushNotificationRouter.sharedRouter.route(application, notification: notification, fetchCompletionHandler: nil)).to(beFalsy())
+                        expect(CKPushNotificationRouter.sharedRouter.route(application: application, notification: notification, fetchCompletionHandler: nil)).to(beFalsy())
                         
                     }
                 }
@@ -86,7 +86,7 @@ class CKPushNotificationRouterSpec: QuickSpec {
                 ]
                 
                 it("router should route correctly") {
-                    expect(CKPushNotificationRouter.sharedRouter.route(application, notification: notification, fetchCompletionHandler: nil)).to(beFalsy())
+                    expect(CKPushNotificationRouter.sharedRouter.route(application: application, notification: notification, fetchCompletionHandler: nil)).to(beFalsy())
                     
                 }
             }
@@ -104,7 +104,7 @@ class CKPushNotificationRouterSpec: QuickSpec {
                 
                 
                 it("router should route correctly") {
-                    expect(CKPushNotificationRouter.sharedRouter.route(application, notification: notification, fetchCompletionHandler: nil)).to(beFalsy())
+                    expect(CKPushNotificationRouter.sharedRouter.route(application: application, notification: notification, fetchCompletionHandler: nil)).to(beFalsy())
                     
                 }
             }
@@ -114,48 +114,48 @@ class CKPushNotificationRouterSpec: QuickSpec {
     
     class CKGreetingProcessor: NSObject, CKPushNotificationProcessor {
         
-        var notification: [NSObject: AnyObject]
+        var notification: [AnyHashable: Any]
         
         static var processorType: String {
             return "greeting"
         }
         
-        required init(notification: [NSObject : AnyObject]) {
+        required init(notification: [AnyHashable: Any]) {
             self.notification = notification
         }
         
-        func process(application: UIApplication, notification: [NSObject : AnyObject], fetchCompletionHandler: (UIBackgroundFetchResult -> Void)?) {}
+        func process(application: UIApplication, notification: [AnyHashable: Any], fetchCompletionHandler: ((UIBackgroundFetchResult) -> Void)?) {}
         
     }
     
     class CKWarningProcessor: NSObject, CKPushNotificationProcessor {
         
-        var notification: [NSObject: AnyObject]
+        var notification: [AnyHashable: Any]
         
         static var processorType: String {
             return "warning"
         }
         
-        required init(notification: [NSObject : AnyObject]) {
+        required init(notification: [AnyHashable: Any]) {
             self.notification = notification
         }
         
-        func process(application: UIApplication, notification: [NSObject : AnyObject], fetchCompletionHandler: (UIBackgroundFetchResult -> Void)?) {}
+        func process(application: UIApplication, notification: [AnyHashable: Any], fetchCompletionHandler: ((UIBackgroundFetchResult) -> Void)?) {}
     }
     
     class CKInfoProcessor: NSObject, CKPushNotificationProcessor {
         
-        var notification: [NSObject: AnyObject]
+        var notification: [AnyHashable: Any]
         
         static var processorType: String {
             return "info"
         }
         
-        required init(notification: [NSObject : AnyObject]) {
+        required init(notification: [AnyHashable: Any]) {
             self.notification = notification
         }
         
-        func process(application: UIApplication, notification: [NSObject : AnyObject], fetchCompletionHandler: (UIBackgroundFetchResult -> Void)?) {}
+        func process(application: UIApplication, notification: [AnyHashable: Any], fetchCompletionHandler: ((UIBackgroundFetchResult) -> Void)?) {}
     }
     
 }

@@ -17,7 +17,7 @@ import CocoaLumberjack
         return instance
     }()
     
-    public var messageTypeProcessor: ([NSObject: AnyObject] -> String)?
+    public var messageTypeProcessor: (([AnyHashable: Any]) -> String)?
     public var messageTypeKey: String = "messageType"
     
     var processors: [String: CKPushNotificationProcessor.Type]
@@ -46,17 +46,16 @@ import CocoaLumberjack
         * false   - when the notification can't be processed, which means there's not processor for it
      */
     public func route(application: UIApplication,
-        notification:[NSObject: AnyObject],
-        fetchCompletionHandler:(UIBackgroundFetchResult -> Void)?) -> Bool
-    {
+        notification: [AnyHashable: Any],
+        fetchCompletionHandler: ((UIBackgroundFetchResult) -> Void)?) -> Bool {
         
         DDLogVerbose("====> Application.state = \(application.applicationState)")
         DDLogVerbose("====> Received notification = \(notification)")
         
         var isProcessed = false
         
-        if let processor = processorWithNotification(notification) {
-            processor.process(application, notification: notification, fetchCompletionHandler: fetchCompletionHandler)
+        if let processor = processor(for: notification) {
+            processor.process(application: application, notification: notification, fetchCompletionHandler: fetchCompletionHandler)
             isProcessed = true
         }
         
@@ -65,15 +64,15 @@ import CocoaLumberjack
     
 
     
-    public func register(processor processor: CKPushNotificationProcessor.Type) {
+    public func register(processor: CKPushNotificationProcessor.Type) {
         processors[processor.processorType] = processor
     }
     
-    public func unregister(processor processor: CKPushNotificationProcessor.Type) {
-        processors.removeValueForKey(processor.processorType)
+    public func unregister(processor: CKPushNotificationProcessor.Type) {
+        processors.removeValue(forKey: processor.processorType)
     }
     
-    private func processorWithNotification(notification: [NSObject: AnyObject]) -> CKPushNotificationProcessor? {
+    private func processor(for notification: [AnyHashable: Any]) -> CKPushNotificationProcessor? {
         
         let messageType: String
         
@@ -83,7 +82,7 @@ import CocoaLumberjack
             if let type = notification[messageTypeKey] as? String {
                 messageType = type
             } else {                
-                DDLogVerbose("====> No registered processor for notification = \(notification)")
+                print("====> No registered processor for notification = \(notification)")
                 return nil;
             }
         }

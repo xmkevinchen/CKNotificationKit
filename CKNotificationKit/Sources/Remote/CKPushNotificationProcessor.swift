@@ -8,13 +8,15 @@
 
 import UIKit
 
-@objc public protocol CKPushNotificationProcessor : class {
+public protocol CKPushNotificationProcessor {
     
     static var processorType: String { get }
     
-    init(notification:[NSObject: AnyObject])
+    init(notification: [AnyHashable: Any])
     
-    func process(application: UIApplication, notification:[NSObject: AnyObject], fetchCompletionHandler:(UIBackgroundFetchResult -> Void)?)
+    func process(application: UIApplication,
+                 notification: [AnyHashable: Any],
+                 fetchCompletionHandler: ((UIBackgroundFetchResult) -> Void)?)
 }
 
 
