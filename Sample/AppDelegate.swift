@@ -15,43 +15,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         CKPushNotificationRouter.sharedRouter.register(processor: CKGreetingNotificationProcessor.self)
         CKPushNotificationRouter.sharedRouter.register(processor: CKWarningNotificationProcessor.self)
         
-        
-        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        let settings = UIUserNotificationSettings(types: [.alert, .sound, .badge], categories: nil)
         application.registerUserNotificationSettings(settings)
         
         return true
     }
-    
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
     }
     
-    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         
     }
     
-    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
         application.registerForRemoteNotifications()
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        if !CKPushNotificationRouter.sharedRouter.route(application, notification: userInfo, fetchCompletionHandler: nil) {
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if !CKPushNotificationRouter.sharedRouter.route(application: application, notification: userInfo, fetchCompletionHandler: completionHandler) {
             DDLogVerbose("====> Received unknown notification \(userInfo)")
         }
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        if !CKPushNotificationRouter.sharedRouter.route(application, notification: userInfo, fetchCompletionHandler: completionHandler) {
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        if !CKPushNotificationRouter.sharedRouter.route(application: application, notification: userInfo, fetchCompletionHandler: nil) {
             DDLogVerbose("====> Received unknown notification \(userInfo)")
         }
     }
+    
 
 }
 

@@ -12,30 +12,30 @@ import CocoaLumberjack
 
 class CKGreetingNotificationProcessor: NSObject, CKPushNotificationProcessor {
     
-    var notification: [NSObject : AnyObject]
+    var notification: [AnyHashable : Any]
     
     static var processorType: String {
         return "greeting"
     }
     
-    required init(notification: [NSObject : AnyObject]) {
+    required init(notification: [AnyHashable : Any]) {
         self.notification = notification
     }
     
-    func process(application: UIApplication, notification: [NSObject : AnyObject], fetchCompletionHandler: (UIBackgroundFetchResult -> Void)?) {
+    func process(application: UIApplication, notification: [AnyHashable : Any], fetchCompletionHandler: ((UIBackgroundFetchResult) -> Void)?) {
         switch application.applicationState {
-        case .Active:
+        case .active:
             if let message = notification["message"] as? String {
-                SVProgressHUD.showSuccessWithStatus(message)
+                SVProgressHUD.showSuccess(withStatus: message)
             }
             
-        case .Background:
+        case .background:
             DDLogVerbose("====> Received greeting push notification when application is in background")
             
-        case .Inactive:
+        case .inactive:
             DDLogVerbose("====> Received greeting push notification when application is inactive")
         }
         
-        fetchCompletionHandler?(.NoData)
+        fetchCompletionHandler?(.newData)
     }
 }

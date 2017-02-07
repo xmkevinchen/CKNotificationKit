@@ -30,7 +30,7 @@
     return @"warning";
 }
 
-- (void)process:(UIApplication * __nonnull)application notification:(NSDictionary * __nonnull)notification fetchCompletionHandler:(void (^ __nullable)(UIBackgroundFetchResult))fetchCompletionHandler {
+- (void)processWithApplication:(UIApplication * __nonnull)application notification:(NSDictionary * __nonnull)notification fetchCompletionHandler:(void (^ __nullable)(UIBackgroundFetchResult))fetchCompletionHandler {
     
     switch (application.applicationState) {
         case UIApplicationStateActive: {

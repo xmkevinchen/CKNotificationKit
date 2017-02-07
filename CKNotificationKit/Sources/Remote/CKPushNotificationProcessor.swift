@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol CKPushNotificationProcessor {
+@objc public protocol CKPushNotificationProcessor {
     
     static var processorType: String { get }
     
